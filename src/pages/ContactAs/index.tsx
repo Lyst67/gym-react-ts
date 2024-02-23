@@ -19,7 +19,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     trigger,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (e: React.SyntheticEvent) => {
+  const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if (!isValid) {
       e.preventDefault();
