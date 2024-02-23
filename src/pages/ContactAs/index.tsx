@@ -19,6 +19,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     trigger,
     formState: { errors },
   } = useForm();
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if (!isValid) {
