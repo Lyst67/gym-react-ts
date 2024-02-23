@@ -1,6 +1,6 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
-import ActionButton from "@/shared/ActionButton";
-import { SelectedPage } from "@/shared/types";
+import ActionButton from "@/components/ActionButton";
+import { SelectedPage } from "@/helpers/types";
 import HomePageText from "@/assets/HomePageText.png";
 import HomePagsGrefphic from "@/assets/HomePageGraphic.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
@@ -78,7 +78,7 @@ function Home({ setSelectedPage }: Props) {
         </div>
       </motion.div>
       {isAboveMediumScreens && (
-        <div className="flex h-[150px] w-full items-center bg-primary-100">
+        <div className="flex h-[120px] w-full items-center bg-primary-100">
           <div className="mx-auto flex w-5/6 items-center justify-around gap-8 ">
             <img src={SponsorRedBull} alt="redbull-image" />
             <img src={SponsorForbes} alt="forbes-image" />

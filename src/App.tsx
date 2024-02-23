@@ -1,8 +1,9 @@
-import Navbar from "@/scenes/Navbar";
+import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
-import { SelectedPage } from "./shared/types";
-import Home from "@/scenes/Home";
-import Benefits from "@/scenes/Benefits";
+import { SelectedPage } from "./helpers/types";
+import Home from "@/pages/Home";
+import Benefits from "@/pages/Benefits";
+import OurClasses from "@/pages/OurClasses";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-gray-20">
+    <div>
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
@@ -33,6 +34,7 @@ function App() {
       />
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
+      <OurClasses setSelectedPage={setSelectedPage} />
     </div>
   );
 }
