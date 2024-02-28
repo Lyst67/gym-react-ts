@@ -1,10 +1,10 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "@/assets/Logo.png";
-import Link from "./Link";
+import spaceLogo from "@/assets/spaceLogo.png";
 import { SelectedPage } from "@/helpers/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
+import LinkAnchor from "./LinkAnchor";
 
 type Props = {
   isTopOfPage: boolean;
@@ -12,12 +12,13 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-// eslint-disable-next-line no-empty-pattern
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage
+    ? "bg-gradient-to-r from-[#304352]/50 to-[#d7d2cc]/50"
+    : "bg-gradient-to-r from-[#304352] via-[#d7d2cc] to-transparent drop-shadow";
 
   return (
     <nav>
@@ -26,26 +27,26 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
-            <img src={Logo} alt="logo" />
+            <img className="drop-shadow-lg" src={spaceLogo} alt="logo" />
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
+                  <LinkAnchor
                     page="Home"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <LinkAnchor
                     page="Benefits"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <LinkAnchor
                     page="Our Classes"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <LinkAnchor
                     page="Contact Us"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
@@ -60,7 +61,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               </div>
             ) : (
               <button
-                className="rounded-full bg-secondary-500 p-2"
+                className="rounded-full bg-[#E5B80B]  p-2"
                 onClick={() => {
                   setIsMenuToggled(!isMenuToggled);
                 }}
@@ -73,7 +74,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       </div>
       {/* MOBIL MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="drop-shadow- fixed bottom-0 right-0 z-40 h-full w-72 bg-primary-100 drop-shadow-xl">
+        <div className="drop-shadow- fixed bottom-0 right-0 z-40 h-full w-72 bg-gradient-to-t from-[#304352] to-[#d7d2cc] drop-shadow-xl">
           {/* CLOSE BUTTON */}
           <div className="flex justify-end p-12">
             <button
@@ -83,28 +84,28 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             >
               <XMarkIcon
                 className="h-6
-                          w-6 text-gray-400"
+                          w-6 text-gray-500"
               />
             </button>
           </div>
           {/* MENU ITEMS */}
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <Link
+            <LinkAnchor
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <LinkAnchor
               page="Benefits"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <LinkAnchor
               page="Our Classes"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <LinkAnchor
               page="Contact Us"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}

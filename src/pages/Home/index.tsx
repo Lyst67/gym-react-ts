@@ -1,13 +1,14 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/components/ActionButton";
 import { SelectedPage } from "@/helpers/types";
-import HomePageText from "@/assets/HomePageText.png";
-import HomePagsGrefphic from "@/assets/HomePageGraphic.png";
+import withTattoos1 from "@/assets/withTattoos1.png";
+import spaceLogoHome from "@/assets/spaceLogoHome.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import HText from "@/components/HText";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -17,16 +18,13 @@ function Home({ setSelectedPage }: Props) {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
 
   return (
-    <section
-      id="home"
-      className="md:pb gap-16 bg-gray-20 py-10 md:h-full md:pb-0"
-    >
+    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       <motion.div
         className="mx-auto w-5/6 items-center justify-center gap-16 md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
         <motion.div
-          className="z-10 mt-32 md:basis-3/5"
+          className="z-10 mt-32 md:basis-4/5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -36,12 +34,17 @@ function Home({ setSelectedPage }: Props) {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <div className="relative md:-mt-20">
-            <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] md:before:content-evolvetext">
-              <img src={HomePageText} alt="home-page-text" />
+          <div className="relative mb-6">
+            <div className="before:absolute before:-left-10 before:-top-24 before:z-[-1] md:before:content-evolvetext">
+              <img
+                className="text-black drop-shadow-lg"
+                src={spaceLogoHome}
+                alt="home-page-text"
+              />
             </div>
           </div>
-          <p className="mt-8  max-w-lg text-sm ">
+          <HText>WE BUILD YOUR BODY.</HText>
+          <p className="mt-6  max-w-lg text-sm ">
             Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
             Studios to get the Body Shapes That you Dream of.. Get Your Dream
             Body Now.
@@ -61,9 +64,9 @@ function Home({ setSelectedPage }: Props) {
               Join Now
             </ActionButton>
             <AnchorLink
-              className="hover:text-seconary-500 text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-              onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-              href={`#${SelectedPage.ContactUs}`}
+              className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
+              onClick={() => setSelectedPage(SelectedPage.OurClasses)}
+              href={`#${SelectedPage.OurClasses}`}
             >
               Lern More
             </AnchorLink>
@@ -71,14 +74,14 @@ function Home({ setSelectedPage }: Props) {
         </motion.div>
         {/* IMAGE */}
         <div
-          className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end"
+          className="flex  basis-4/5 justify-center overflow-hidden rounded-xl md:z-10 
+              md:ml-40 md:mt-32 md:justify-items-end"
         >
-          <img src={HomePagsGrefphic} alt="home-page-image" />
+          <img src={withTattoos1} alt="home-page-image" />
         </div>
       </motion.div>
       {isAboveMediumScreens && (
-        <div className="flex h-[120px] w-full items-center bg-primary-100">
+        <div className="flex h-[120px] w-full items-center bg-gradient-to-r from-[#304352] via-[#d7d2cc] to-transparent md:mt-8">
           <div className="mx-auto flex w-5/6 items-center justify-around gap-8 ">
             <img src={SponsorRedBull} alt="redbull-image" />
             <img src={SponsorForbes} alt="forbes-image" />

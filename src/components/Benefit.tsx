@@ -21,7 +21,7 @@ const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
       className="bordergr mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
     >
       <div className="mb-4 flex justify-center">
-        <div className=" flex justify-center rounded-full border-2 border-gray-100 bg-primary-100 p-4">
+        <div className=" flex justify-center rounded-full border-2 border-gray-100 bg-gradient-to-r from-[#304352] to-[#d7d2cc] p-4">
           {icon}
         </div>
       </div>
@@ -29,8 +29,8 @@ const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
       <p className="my-3">{description}</p>
       <AnchorLink
         className="hover:text-seconary-500 text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-        href={`#${SelectedPage.ContactUs}`}
+        onClick={() => setSelectedPage(SelectedPage.OurClasses)}
+        href={`#${SelectedPage.OurClasses}`}
       >
         Lern More
       </AnchorLink>

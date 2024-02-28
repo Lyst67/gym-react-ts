@@ -1,17 +1,15 @@
 import { SelectedPage } from "@/helpers/types";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
+import contactUsPage from "@/assets/contactUsPage.webp";
 import HText from "@/components/HText";
-
-motion;
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
 const ContactUs = ({ setSelectedPage }: Props) => {
-  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
+  const inputStyles = `mb-5 w-full rounded-lg bg-gradient-to-r from-[#304352] to-[#d7d2cc]
   px-5 py-3 placeholder-white`;
 
   const {
@@ -28,8 +26,9 @@ const ContactUs = ({ setSelectedPage }: Props) => {
   };
 
   return (
-    <section id="contactus" className="mx-auto w-5/6 pb-32 pt-24">
+    <section id="contactus" className="mx-auto w-full pb-32 pt-24">
       <motion.div
+        className="mx-auto  w-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
       >
         <motion.div
@@ -133,7 +132,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 
               <button
                 type="submit"
-                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+                className="mt-5 rounded-lg bg-[#E5B80B]  px-20 py-3 transition duration-500 hover:text-white"
               >
                 SUBMIT
               </button>
@@ -151,11 +150,11 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+            <div className="w-full overflow-hidden rounded-2xl before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
               <img
                 className="w-full"
                 alt="contact-us-page-graphic"
-                src={ContactUsPageGraphic}
+                src={contactUsPage}
               />
             </div>
           </motion.div>
