@@ -50,7 +50,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
     >
       <div className="mx-auto w-5/6">
         <motion.div
-          className="my-5 "
+          className="mb-5 "
           onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
         >
           <motion.div

@@ -18,7 +18,7 @@ function Home({ setSelectedPage }: Props) {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
 
   return (
-    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+    <section id="home" className="gap-16 bg-gray-20 pt-10 md:h-full ">
       <motion.div
         className="mx-auto w-5/6 items-center justify-center gap-16 md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
@@ -43,12 +43,15 @@ function Home({ setSelectedPage }: Props) {
               />
             </div>
           </div>
-          <HText>WE BUILD YOUR BODY.</HText>
-          <p className="mt-6  max-w-lg text-sm ">
-            Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-            Studios to get the Body Shapes That you Dream of.. Get Your Dream
-            Body Now.
-          </p>
+          <div>
+            <HText>WE BUILD YOUR BODY.</HText>
+            <p className="mt-6  max-w-lg text-sm ">
+              Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
+              Studios to get the Body Shapes That you Dream of.. Get Your Dream
+              Body Now.
+            </p>
+          </div>
+
           <motion.div
             className="mt-8 flex items-center gap-8"
             initial="hidden"
@@ -74,10 +77,10 @@ function Home({ setSelectedPage }: Props) {
         </motion.div>
         {/* IMAGE */}
         <div
-          className="flex  basis-4/5 justify-center overflow-hidden rounded-xl md:z-10 
-              md:ml-40 md:mt-32 md:justify-items-end"
+          className="mx-auto flex w-4/5 justify-center overflow-hidden rounded-xl md:z-10  
+              md:mt-32 md:w-full md:justify-items-end"
         >
-          <img src={withTattoos1} alt="home-page-image" />
+          <img className="w-full" src={withTattoos1} alt="home-page-image" />
         </div>
       </motion.div>
       {isAboveMediumScreens && (

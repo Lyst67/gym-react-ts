@@ -17,7 +17,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
   const navbarBackground = isTopOfPage
-    ? "bg-gradient-to-r from-[#304352]/50 to-[#d7d2cc]/50"
+    ? "bg-gradient-to-r from-[#304352]/80 via-[#d7d2cc]/50 to-transparent"
     : "bg-gradient-to-r from-[#304352] via-[#d7d2cc] to-transparent drop-shadow";
 
   return (
